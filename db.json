@@ -1,0 +1,162 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "typicode"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Tai Nghe Nhét Tai Có Dây Có Mic Jack 3.5mm chuyên gaming oppo, samsung",
+      "cate_id": 1,
+      "price": 400000,
+      "priceold": 500000,
+      "detail": "Tai Nghe Nhét Tai Có Dây Có Mic Jack 3.5mm chuyên gaming oppo, samsung",
+      "image": "https://cf.shopee.vn/file/56e62f214702317b56b5c7ea72b5944f_tn"
+    },
+    {
+      "id": 2,
+      "name": "Áo Hoodie Essentials Nỉ Bông Hàng Cao Cấp Ss2021",
+      "cate_id": 1,
+      "price": 300000,
+      "priceold": 500000,
+      "detail": "- Hàng có sẵn tại shop <br> - Full tag, mác, túi bóng như real - Full size : M, L, XL XXL với thương hiệu 5 năm chúng tôi cam kết đem những sản phẩm nào tốt nhất đến vói tay khách hàng Khách Nhận Hàng Nếu Không Ưng Không Đúng Chất Lượng Shop Đền 5 lần giá trị sản phẩm Không Ưng Không Đẹp Không Vừa Hay là Không Như Cam Kết Hoàn Hàng Bên Mình Chịu Hoàn Toàn Phí Vận Chuyển Và bank Lại Khách Đúng Như Cam Kết",
+      "image": "https://cf.shopee.vn/file/ceadc64d08f343a7a5f8667cdf97d4fa"
+    },
+    {
+      "id": 3,
+      "name": "Áo Hoodie Essentials Nỉ Bông Hàng Cao Cấp Ss2021",
+      "cate_id": 1,
+      "price": 300000,
+      "priceold": 500000,
+      "detail": "Áo Hoodie Essentials Nỉ Bông Hàng Cao Cấp Ss2021",
+      "image": "https://cf.shopee.vn/file/b107f2e6167adb250100ec4c8d028a57_tn"
+    },
+    {
+      "id": 4,
+      "name": "Combo 20 Cuốn Tập Học Sinh 4 Ô Ly 96 Trang DL 80 - Mẫu Ngẫu Nhiên",
+      "cate_id": 1,
+      "price": 40000,
+      "priceold": 80000,
+      "detail": "Combo 20 Cuốn Tập Học Sinh 4 Ô Ly 96 Trang DL 80 - Mẫu Ngẫu Nhiên",
+      "image": "https://salt.tikicdn.com/cache/400x400/ts/product/f0/25/2b/0d00af5340449d3eabbc0784bfa991c7.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Tai Nghe Nhét Tai Có Dây Có Mic Jack 3.5mm chuyên gaming oppo, samsung",
+      "cate_id": 1,
+      "price": 300000,
+      "priceold": 500000,
+      "detail": "Tai Nghe Nhét Tai Có Dây Có Mic Jack 3.5mm chuyên gaming oppo, samsung",
+      "image": "https://salt.tikicdn.com/cache/200x200/ts/product/98/9e/9a/9fd5856e9a6cdfe715d8318bd263e8ca.jpg.webp"
+    },
+    {
+      "id": 6,
+      "name": "Combo 20 Cuốn Tập Học Sinh 4 Ô Ly 96 Trang DL 80 - Mẫu Ngẫu Nhiên",
+      "cate_id": 1,
+      "price": 300000,
+      "priceold": 500000,
+      "detail": "Combo 20 Cuốn Tập Học Sinh 4 Ô Ly 96 Trang DL 80 - Mẫu Ngẫu Nhiên",
+      "image": "https://salt.tikicdn.com/cache/400x400/ts/product/f0/25/2b/0d00af5340449d3eabbc0784bfa991c7.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Tai Nghe Nhét Tai Có Dây Có Mic Jack 3.5mm chuyên gaming oppo, samsung",
+      "cate_id": 1,
+      "price": 300000,
+      "priceold": 500000,
+      "detail": "Tai Nghe Nhét Tai Có Dây Có Mic Jack 3.5mm chuyên gaming oppo, samsung",
+      "image": "https://salt.tikicdn.com/cache/200x200/ts/product/98/9e/9a/9fd5856e9a6cdfe715d8318bd263e8ca.jpg.webp"
+    },
+    {
+      "id": 9,
+      "name": "Điện thoại Iphone 13 ProMax 1GB",
+      "cate_id": 1,
+      "price": 20000000,
+      "priceold": 80000000,
+      "detail": "Điện thoại Iphone 13 ProMax 1GB",
+      "image": "https://cf.shopee.vn/file/b107f2e6167adb250100ec4c8d028a57_tn"
+    },
+    {
+      "id": 10,
+      "name": "Áo Hoodie Essentials Nỉ Bông Hàng Cao Cấp Ss2021",
+      "cate_id": 1,
+      "price": 300000,
+      "priceold": 500000,
+      "detail": "Áo Hoodie Essentials Nỉ Bông Hàng Cao Cấp Ss2021",
+      "image": "https://cf.shopee.vn/file/f1a427a3a5781b4840f2a7dc57bff833_tn"
+    },
+    {
+      "name": "dinh news",
+      "cate_id": "3",
+      "price": "1000",
+      "priceold": "4000",
+      "detail": "33333",
+      "image": "https://cf.shopee.vn/file/56e62f214702317b56b5c7ea72b5944f_tn",
+      "id": "2330040320411330441344"
+    },
+    {
+      "id": "34222330101432323324",
+      "name": "quynh xxx",
+      "cate_id": "2",
+      "price": "111",
+      "priceold": "1111",
+      "detail": "1",
+      "image": "111"
+    },
+    {
+      "id": "24404113234302111301033",
+      "name": "quynhxxxx",
+      "cate_id": "1",
+      "price": "111",
+      "priceold": "111",
+      "detail": "1111",
+      "image": "111"
+    },
+    {
+      "name": "qq",
+      "cate_id": "2",
+      "price": "111",
+      "priceold": "111",
+      "detail": "1111",
+      "image": "11111",
+      "id": "4333100300040110321223"
+    },
+    {
+      "id": "33403040320100011114144",
+      "name": "quynh",
+      "cate_id": "2",
+      "price": "111",
+      "priceold": "1111",
+      "detail": "111111",
+      "image": "1111"
+    },
+    {
+      "id": "42002034314012212114121",
+      "name": "1111111111",
+      "cate_id": "1",
+      "price": "11111111",
+      "priceold": "1",
+      "detail": "q",
+      "image": "q"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "email": "trantien120498@gmail.com",
+      "password": "$2a$10$ag5k6cm.P53AmrhAkonjru0HmPQ2O7wt6MYULY8CO8YogVkWv7rOe",
+      "id": 1
+    }
+  ]
+}
