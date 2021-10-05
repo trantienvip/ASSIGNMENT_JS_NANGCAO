@@ -15,74 +15,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="public/owlcarousel/owl.carousel.min.js"></script>
     <link rel="shortcut icon" href="public/img/favico.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/product-detail.css">
 </head>
-<style>
-    .carousel.slide img {
-        width: 100%;
-    }
-    .content_products {
-        display: flex;
-        flex-direction: column;
-        grid-row-gap: .5rem;
-    }
-    .price{
-        font-size: 1.875rem;
-        font-weight: 500;
-        color: #ee4d2d;
-    }
-    .price-old{
-        font-size: 1rem;
-        text-decoration: line-through;
-        color: #929292;
-        margin-right: 10px;
-    }
-    .btn_muangay{
-        margin-right: 15px;
-        min-width: 11.25rem;
-        padding: 11px .75rem;
-        font-size: 14px;
-        color: #fff;
-        background: #ee4d2d;
-        max-width: 250px;
-        text-transform: uppercase;
-    }
-    .detail_product{
-        text-align: justify;
-    }
-    .btn_muangay:hover{
-        opacity: .9;
-    }
-    #sl_{
-        width: 80px;
-        height: 32px;
-        border-left: 0;
-        border-right: 0;
-        font-size: 16px;
-        font-weight: 400;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        text-align: center;
-        cursor: text;
-        border-radius: 0;
-        -webkit-appearance: none;
-        justify-content: center;
-        transition: background-color .1s cubic-bezier(.4,0,.6,1);
-        border: 1px solid rgba(0,0,0,.09);
-        border-radius: 2px;
-        background: transparent;
-        color: rgba(0,0,0,.8);
-        outline: none;
-        padding-left: 5px;
-    }
-    span#giamgia_pt {
-        background: #ee4d2d;
-        color: #fff;
-        padding: 7px;
-        margin-left: 10px;
-        border-radius: 5px;
-        font-size: 15px;
-    }
-</style>
 
 <body>
     <div class="app">
@@ -119,8 +53,10 @@
                             </li>
                         </ul>
                         <i class="iconsearch ti-search"></i>
-                        <form action="search.html" class="form-search" action="" method="get">
-                            <input name="q" type="text" placeholder="Nhập từ khóa tìm kiếm">
+                        <form action="search.html" class="form-search" method="get">
+                            <input name="q" id="q" type="text" placeholder="Nhập từ khóa tìm kiếm">
+                            <p style="max-width: 285px;" id="hienthi-no"></p>
+                            <div class="hienthi"></div>
                         </form>
                     </div>
                 </div>
@@ -212,6 +148,7 @@
     </script>
 
     <script src="public/bootrap/js/bootstrap.min.js"></script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>

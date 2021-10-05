@@ -276,26 +276,7 @@
                                     </div>
                                 </div>
                                 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-                                <script>
-                                    var formAdd = document.querySelector('#form-add');
-                                    formAdd.addEventListener('submit', function(e){
-                                        e.preventDefault();
-                                        const post = {
-                                            id: Math.random().toString(5).substr(2),
-                                            name: document.querySelector('#nameProduct').value,
-                                            cate_id: document.querySelector('#categoryProduct').value,
-                                            price: document.querySelector('#priceProduct').value,
-                                            priceold: document.querySelector('#oldProduct').value,
-                                            detail: document.querySelector('#detailProduct').value,
-                                            image: document.querySelector('#imageProduct').value,
-                                        }
-
-                                        axios.post('http://localhost:3000/products', post)
-                                        .then(() => alert('Thêm thành công'))
-                                        // .then(response => window.location = './index.html')
-                                        .catch(() => alert('Thêm thất bại'))
-                                    })
-                                </script>
+                                <script src="./assets/js/add.js"></script>
                             </main>
 
                         </div>

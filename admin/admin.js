@@ -8,16 +8,21 @@ axios.get('http://localhost:3000/products?_page=1&_limit=16')
         <td>${data.price}</td>
         <td><img width="80px" src="${data.image}" alt=""></td>
         <td><a class="btn btn-primary"href="./edit.html?id=${data.id}">Sửa</a></td>
-        <td><a class="btn btn-danger"href="./index.html?id=${data.id}">Xóa</a></td>
+        <td><button class="btn btn-danger bnt-confirm-delete" data-target="#deleteProduct" value="${data.id}" data-toggle="modal" href="./index.html?id=${data.id}">Xóa</button></td>
     </tr>`
     ).join(''))
+    .then(() => {
+        var bntDelete = document.querySelectorAll('.bnt-confirm-delete');
+        bntDelete.forEach(e => {
+                e.addEventListener('click', function() {
+                document.querySelector('#delete_ok').value = e.value;
+            });
+        });
+    })
+    .then(() => {
+        var confirmA = document.querySelector('#delete_ok');
+        confirmA.addEventListener('click', function(e) {
+            axios.delete('http://localhost:3000/products/' + this.value)
+        })
 
-
-//del products
-var url = window.location.search;
-const urlParams = new URLSearchParams(url);
-const id = urlParams.get('id');
-if (id) {
-    axios.delete('http://localhost:3000/products/' + id)
-    .then(response => window.location = './index.html')
-}
+    })
