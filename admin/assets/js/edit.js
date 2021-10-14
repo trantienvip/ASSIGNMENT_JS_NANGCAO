@@ -11,6 +11,10 @@ var url = window.location.search;
 const urlParams = new URLSearchParams(url);
 const id = urlParams.get('id');
 
+var categoryProduct = document.querySelector('#cate_id');
+axios.get('http://localhost:3000/categories')
+    .then(response => categoryProduct.innerHTML = response.data.map(data => `<option value='${data.id}'>${data.name}</option>`).join(''))
+    
 axios.get('http://localhost:3000/products/'+ id)
 .then(response => 
     `${document.querySelector('#nameProduct').value = response.data.name,

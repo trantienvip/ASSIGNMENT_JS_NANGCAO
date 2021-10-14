@@ -45,12 +45,22 @@ var formSignin = document.querySelector('#signin');
             email: document.querySelector('#email_dn').value,
             password: document.querySelector('#pass_dn').value
         }
-        console.log(user);
+        // console.log(user);
         axios.post('http://localhost:3000/login', user)
         .then(res => {
             localStorage.setItem('user', JSON.stringify(res.data));
         })
-        .then(() => alert('Đăng nhập thành công'))
+        .then(() => {
+        const userid = JSON.parse(localStorage.getItem('user'))
+        console.log(userid)
+        if (userid.user.id === 1) {
+            console.log('admin')
+            location.href = '/admin'
+        }else{
+            console.log('member')
+            location.href = '../'
+        }
+         alert('Đăng nhập thành công')})
         .catch(error => alert('Đăng nhập thất bại => '+error.response.data))
     });
 
@@ -61,7 +71,7 @@ var pass_dangnhap = document.querySelector('#pass_dn');
 if (typeof(Storage) !== "undefined"){
     var tk = localStorage.getItem('user')
     email_dangnhap.value = JSON.parse(tk).user.email;
-    pass_dangnhap.value = JSON.parse(tk).accessToken
-    console.log(JSON.parse(tk))
+    // pass_dangnhap.value = JSON.parse(tk).accessToken
+    // console.log(JSON.parse(tk))
 }
 

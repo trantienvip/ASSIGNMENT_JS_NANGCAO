@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
+    <title>Thanh toán</title>
     <link rel="stylesheet" href="public/css/app.css">
     <link rel="stylesheet" href="public/bootrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/fonts/themify-icons/themify-icons.css">
@@ -16,6 +16,28 @@
     <script src="public/owlcarousel/owl.carousel.min.js"></script>
     <link rel="shortcut icon" href="public/img/favico.png" type="image/x-icon">
     <link rel="stylesheet" href="public/css/product-detail.css">
+    <style>
+        .cart_all{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            grid-row-gap: 1rem;
+        }
+        .hienthi_item{
+            align-items: center;
+        }
+        .hienthi_item a{
+            text-decoration: none;
+        }
+        #cart-tongtien{
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-weight: 700;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,9 +73,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Nổi bật</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link countCartBig" href="./cart.html"><i class="ti-shopping-cart"></i> <span class="countCart"></span></a>
-                            </li>
                         </ul>
                         <i class="iconsearch ti-search"></i>
                         <form action="search.html" class="form-search" method="get">
@@ -71,13 +90,48 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-                      <li class="breadcrumb-item"><a href="#">Chi tiết sản phẩm</a></li>
-                      <li class="breadcrumb-item active" id="title_product" aria-current="page">Data</li>
+                      <li class="breadcrumb-item">Thanh toán</li>
                     </ol>
                   </nav>
                 
-                <div class="row one_product">
-                    
+                <div class="row cart_all">
+                    <!-- <button class="btn btn-danger" onclick="reomoveStorage()">Làm sạch giỏ hàng</button> -->
+                    <h4>Đơn đặt hàng của bạn</h4>
+                    <table class="table">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">Sản phẩm</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Tổng tiền</th>
+                          </tr>
+                        </thead>
+                        <tbody id="cart-show"></tbody>
+                    </table>
+                      <form style="width: 100%;" method="post" id="form-add">
+                            <div class="form-group">
+                                <label for="nameProduct">Họ và tên người đặt hàng:</label>
+                                <input type="text" class="form-control" id="tenkh"
+                                    placeholder="Họ tên . . ." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nameProduct">Email</label>
+                                <input type="text" class="form-control" id="emailkh"
+                                    placeholder="Email . . ." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nameProduct">Số điện thoại</label>
+                                <input type="text" class="form-control" id="sdtkh"
+                                    placeholder="Số diện thoại . . ." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nameProduct">Địa chỉ nhận hàng</label>
+                                <input type="text" class="form-control" id="diachikh"
+                                    placeholder="Địa chỉ nhận hàng . . ." required>
+                            </div>
+                            <div class="form-group text-center">
+                                <b><input id="cart-tongtien" disabled></input></b><br>
+                                <button type="submit" class="btn btn-primary">Đặt hàng</button>
+                        </form>
                 </div>
 
             </main>
@@ -114,76 +168,51 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
-        var url = window.location.search;
-        const urlParams = new URLSearchParams(url);
-        const id = urlParams.get('id');
-        console.log(id);
-        const title_product = document.querySelector('#title_product');
-        const one_product = document.querySelector('.one_product');
-
-        axios.get('http://localhost:3000/products/' + id)
-            .then(response => title_product.innerHTML = response.data.name)
-
-        axios.get('http://localhost:3000/products/' + id)
-            .then(response => one_product.innerHTML = `
-            <div class="img_big_product col-md-5">
-                        <img width="100%" src="${response.data.image}" alt="">
-                    </div>
-                    <div class="col-md-7 content_products">
-                        <h4 class="title_product">${response.data.name}</h4>
-                        <span class="price-old">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(response.data.priceold)}</span>
-                        <span class="price">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(response.data.price)} <span id="giamgia_pt">-${parseInt(response.data.priceold-response.data.price)/(parseInt(response.data.priceold))*100}%</span> </span>
-                        <p class="detail_product">${response.data.detail}</p>
-                            <p>Số lượng: <input id="sl_" value="1" type="number"> </p>
-                            <button type="button" class="btn btn-solid-primary btn_muangay" onclick="addToCart(${response.data.id})" aria-disabled="false">Mua ngay</button>
-                    </div>
-            `)
-        //add to cart
-        const getCartItems = () => {
-            const cartItems = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
-            return cartItems;
-        };
-        const setCartItems = (cart) => {
-            localStorage.setItem("cart", JSON.stringify(cart));
-        };
-        
-        countCart();
-        function addToCart(id) {
-            console.log(id); // 1
-            axios.get("http://localhost:3000/products/" + id)
-            .then((response) => {
-            const newProduct = {
-                ...response.data,
-                quantity: parseInt(document.querySelector('#sl_').value)
-            };
-            // Lấy danh sách sản phẩm từ localStorage
-            let cartItems = getCartItems();
-            console.log(cartItems);
-            // // kiểm tra sản phẩm trong localStorage, nếu ID trùng nhau thì trả về 1 object
-            const existProduct = cartItems.find(
-                (product) => product.id === newProduct.id
-            );
-            console.log("existProduct", existProduct);
-            if (existProduct) {
-                // neu ton tai san pham trong localStorage thi quantity +1
-                existProduct.quantity = existProduct.quantity + parseInt(document.querySelector('#sl_').value);
-            } else {
-                // Nếu không tồn tại sản phẩm nào trùng ID thì thêm sản phẩm click vào giỏ hàng
-                cartItems = [...cartItems, newProduct];
-            }
-            console.log("cartItems", cartItems);
-            setCartItems(cartItems);
-            alert(newProduct.name + " Đã được thêm vào giỏ hàng")
-            location.reload();
-            // // Chay thong bao thanh cong
-            });
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        var tongTien = 0;
+        let cartPromise = new Promise(() => {})
+        if (cart) {
+            cartPromise
+            .then(document.querySelector("#cart-show").innerHTML = cart.map(data => {
+                tongTien += parseInt(data.price * data.quantity)
+                return `
+                <tr>
+                    <button style="display: none;" class="sanpham" value="${data.id}"></button>
+                    <td><img width="60px" style="border-radius: 3px" src="${data.image}" alt=""><a href="./product-detail.html?id=${data.id}">${data.name}</a></td>
+                    <td>${data.quantity}</td>
+                    <td>${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(parseInt(data.price * data.quantity))}</td>
+                </tr>`
+            }).join(''))
+            .then(document.querySelector('#cart-tongtien').value = 'Tổng thanh toán: '+new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(tongTien))
+        }else{
+            document.querySelector('.cart_all').innerHTML = 'Bạn có muốn mua sản phẩm khác không? <a href="./"> Mua ngay</a>';
         }
-        function countCart() {
-            var countCart = document.querySelector('.countCart');
-            if (JSON.parse(localStorage.getItem("cart"))) {
-                countCart.innerHTML = JSON.parse(localStorage.getItem("cart")).length;
-                countCart.classList.add('active')
+
+        var formAdd = document.querySelector('#form-add');
+        formAdd.addEventListener('submit', function(e){
+            e.preventDefault();
+            const order = {
+                id: Math.random().toString(9).substr(2, 9),
+                tenkh: document.querySelector('#tenkh').value,
+                emailkh: document.querySelector('#emailkh').value,
+                sdtkh: document.querySelector('#sdtkh').value,
+                diachikh: document.querySelector('#diachikh').value,
+                tongtien: tongTien,
+                sanpham: cart,
             }
+
+            console.log(order);
+            axios.post('http://localhost:3000/orders', order)
+            .then(() => alert('Đặt hàng thành công'))
+            .then(()=> reomoveStorage())
+        })
+
+        function reomoveStorage() {
+            localStorage.removeItem('cart');
+        }
+
+        if (localStorage.getItem("user")) {
+            document.querySelector('#emailkh').value = JSON.parse(localStorage.getItem("user")).user.email
         }
     </script>
 

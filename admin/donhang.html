@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Upvex - Responsive Admin Dashboard Template</title>
+        <title>Đơn hàng</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
@@ -24,6 +24,14 @@
                 align-items: center;
                 justify-content: center;
                 font-size: 20px;
+            }
+            span.sanphamct {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                max-width: 300px;
             }
         </style>
     </head>
@@ -182,7 +190,7 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="./donhang.html">Danh sách đơn hàng</a>
+                                        <a href="maps-google.html">Danh sách đơn hàng</a>
                                     </li>
                                     <li>
                                         <a href="maps-vector.html">Vector Maps</a>
@@ -226,7 +234,7 @@
                                             <li class="breadcrumb-item active">Dashboard</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Dashboard</h4>
+                                    <h4 class="page-title">Đơn hàng</h4>
                                 </div>
                             </div>
                         </div>     
@@ -237,11 +245,13 @@
                                 <table class="table">
                                     <thead>
                                       <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Tên sản phẩm</th>
-                                        <th scope="col">Giá</th>
-                                        <th scope="col">Images</th>
-                                        <th scope="col">Danh mục</th>
+                                        <th scope="col">ID Đơn hàng</th>
+                                        <th scope="col">Tên KH</th>
+                                        <th scope="col">Email KH</th>
+                                        <th scope="col">SĐT KH</th>
+                                        <th scope="col">Địa chỉ KH</th>
+                                        <th scope="col">Chi tiết sản phẩm</th>
+                                        <th scope="col">Tổng Tiền</th>
                                         <th scope="col" colspan="2">Chức năng</th>
                                       </tr>
                                     </thead>
@@ -249,6 +259,8 @@
                                       
                                     </tbody>
                                   </table>
+                                  <div style="color: white;">Tổng doanh thu: <span id="tongdoanhthu">0₫</span></div>
+                                  <div style="color: white;">Tổng số đơn hàng: <span id="tongdonhang">0</span></div>
                             </div>
                         </div>
                         <!-- end row -->
@@ -414,6 +426,43 @@
         <script src="assets\js\app.min.js"></script>
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="admin.js"></script>
+        <script>
+            var tongDoanhThu = 0;
+            axios.get('http://localhost:3000/orders?_sort=stt&_order=asc')
+            .then(response => 
+            document.querySelector('#show').innerHTML =
+            response.data.map((data, index) => {
+                tongDoanhThu += data.tongtien
+                tongdonhang = ++index
+                document.querySelector('#tongdoanhthu').innerHTML = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(tongDoanhThu);
+                document.querySelector('#tongdonhang').innerHTML = tongdonhang
+            return `<tr>
+                <th scope="row">${data.id}</th>
+                <td>${data.tenkh}</td>
+                <td>${data.emailkh}</td>
+                <td>${data.sdtkh}</td>
+                <td>${data.diachikh}</td>
+                <td>${data.sanpham.map(e => `<span class="sanphamct">-  (${e.quantity}) <a href="http://127.0.0.1:5500/product-detail.html?id=${e.id}">${e.name}</a> <br> </span>`).join('')}</td>
+                </td>
+                <td>${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(data.tongtien)}</td>
+                <td><button class="btn btn-danger bnt-confirm-delete" data-target="#deleteProduct" value="${data.id}" data-toggle="modal">Xóa</button></td>
+            </tr>`
+            }).join('')
+            )
+            .then(() => {
+                var bntDelete = document.querySelectorAll('.bnt-confirm-delete');
+                bntDelete.forEach(e => {
+                        e.addEventListener('click', function() {
+                        document.querySelector('#delete_ok').value = e.value;
+                    });
+                });
+            })
+            .then(() => {
+                var confirmA = document.querySelector('#delete_ok');
+                confirmA.addEventListener('click', function(e) {
+                    axios.delete('http://localhost:3000/orders/' + this.value)
+                })
+            })
+        </script>
     </body>
 </html>

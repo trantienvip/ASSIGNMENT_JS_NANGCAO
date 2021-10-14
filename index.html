@@ -16,6 +16,56 @@
     <script src="public/owlcarousel/owl.carousel.min.js"></script>
     <link rel="shortcut icon" href="public/img/favico.png" type="image/x-icon">
     <link rel="stylesheet" href="/public/css/home.css">
+    <style>
+        .information_user {
+            position: absolute;
+            color: #fff;
+            right: 20px;
+            background: #f26f21;
+            padding: 10px;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0px 0px 5px #fff;
+            z-index: 999;
+        }
+        .information_user::after {
+            content: "";
+            position: absolute;
+            background: #28e028;
+            border-radius: 50%;
+            height: 8px;
+            width: 8px;
+            top: 0;
+            right: 0;
+            box-shadow: 0 0 5px #fff;
+        }
+        .info_user{
+            top: -100%;
+            display: none;
+            transition: .3s linear all;
+        }
+        .info_user.active {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(0 0 0 / 82%);
+            flex-direction: column;
+            color: #fff;
+            z-index: 99;
+            font-size: 20px;
+            grid-row-gap: .4rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,6 +101,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Nổi bật</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link countCartBig" href="./cart.html"><i class="ti-shopping-cart"></i> <span class="countCart"></span></a>
+                            </li>
                         </ul>
                         <i class="iconsearch ti-search"></i>
                         <form action="search.html" class="form-search" method="get">
@@ -58,6 +111,12 @@
                             <p style="max-width: 285px;" id="hienthi-no"></p>
                             <div class="hienthi"></div>
                         </form>
+                        <div class="information_user">
+                            <i class="ti-user"></i>
+                        </div>
+                        <div style="position: absolute; right: 16px; top: 24px;" class="login">
+                            <a href="./cp">Đăng nhập</a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -133,9 +192,9 @@
 
                 <div class="news-auto row">
                     <div class="title">
-                        <h5> <i class="ti-bolt"></i> SẢN PHẨM BÁN CHẠY </h5>
+                        <h5> <i class="ti-bolt"></i> SẢN PHẨM MỚI NHẤT </h5>
                     </div>
-                    <div class="owl-carousel owl-theme">
+                    <div class="owl-carousel owl-theme carousel-product">
                         <div class="item">
                             <a href="#"><img
                                     src="https://coin68.com/wp-content/uploads/2021/08/huong-dan-danh-pvp-axie-infinity-toi-uu-360x180.png"
@@ -218,6 +277,12 @@
                     </div>
 
                     <div class="sort_price">
+                        <select name="" id="category">
+                            <option value="">--- Danh mục ---</option>
+                            <option value="1">Điện thoại</option>
+                            <option value="2">Quần áo</option>
+                            <option value="3">Đồ dùng học tập</option>
+                        </select>
                         <select name="" id="sort_price_all">
                             <option value="">--- Sắp xếp ---</option>
                             <option value="asc">Giá thấp đến cao</option>
@@ -272,41 +337,16 @@
                 </div>
             </div>
         </footer>
+        <div class="info_user">
+            <span>Xin chào!</span>
+            <div class="showuser"></div>
+            <a class="btn btn-info" href="./admin">Cpanel</a>
+            <button class="btn" onclick="logout()">Logout</button>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
-    <script>
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false,
-                    autoplay: true,
-                    autoplayTimeout: 1800,
-                    autoplayHoverPause: true,
-                },
-                600: {
-                    items: 3,
-                    nav: false,
-                    autoplay: true,
-                    autoplayTimeout: 1800,
-                    autoplayHoverPause: true
-                },
-                1000: {
-                    items: 5,
-                    nav: false,
-                    loop: false,
-                    autoplay: true,
-                    autoplayTimeout: 1800,
-                    autoplayHoverPause: true
-                }
-            }
-        })
-    </script>
     <script>
         var iconsearch = $('.iconsearch.ti-search');
         var formsearch = $('.form-search');
@@ -318,6 +358,11 @@
     </script>
 
     <script src="public/bootrap/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelector('.ti-user').addEventListener('click', function () {
+            document.querySelector('.info_user').classList.toggle('active');
+        })
+    </script>
 </body>
 
 </html>

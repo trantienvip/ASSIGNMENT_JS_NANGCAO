@@ -415,7 +415,28 @@ i.ti-stats-up {
 .iconsearch {
   color: #fff;
   font-size: 18px; }
-
+  .countCartBig {
+    padding: 8px;
+    position: relative;
+}
+.ti-shopping-cart{
+    font-size: 23px;
+    color: #f4faff;
+}
+.countCart.active{
+    position: absolute;
+    background: #f26f21;
+    padding: 5px;
+    color: #fff;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -8px;
+    right: -10px;
+}
 @media (min-width: 768px) and (max-width: 1023.9px) {
   .iconsearch {
     font-size: 27px;

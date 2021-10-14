@@ -2,7 +2,19 @@
   "categories": [
     {
       "id": 1,
-      "name": "typicode"
+      "name": "Điện thoại"
+    },
+    {
+      "id": 2,
+      "name": "Quần áo"
+    },
+    {
+      "name": "Đồ dùng học tập",
+      "id": 3
+    },
+    {
+      "id": "703717477",
+      "name": "Trần Tiến"
     }
   ],
   "products": [
@@ -18,23 +30,13 @@
     },
     {
       "name": "Áo Hoodie Essentials Nỉ Bông Hàng Cao Cấp Ss2021",
-      "cate_id": "1",
+      "cate_id": "2",
       "price": 300000,
       "priceold": 500000,
       "detail": "- Hàng có sẵn tại shop <br> - Full tag, mác, túi bóng như real - Full size : M, L, XL XXL với thương hiệu 5 năm chúng tôi cam kết đem những sản phẩm nào tốt nhất đến vói tay khách hàng Khách Nhận Hàng Nếu Không Ưng Không Đúng Chất Lượng Shop Đền 5 lần giá trị sản phẩm Không Ưng Không Đẹp Không Vừa Hay là Không Như Cam Kết Hoàn Hàng Bên Mình Chịu Hoàn Toàn Phí Vận Chuyển Và bank Lại Khách Đúng Như Cam Kết",
       "image": "https://cf.shopee.vn/file/ceadc64d08f343a7a5f8667cdf97d4fa",
       "slug": "ao-hoodie-essentials-ni-bong-hang-cao-cap-ss2021",
       "id": 2
-    },
-    {
-      "name": "Áo Polo Nam AM MP078 Chất Liệu Coolmax Thấm Hút Mồ Hôi, Khô Thoáng Tuyệt Đối Cổ 2 Cúc Phối 2 Màu Tương Phản",
-      "cate_id": "2",
-      "price": 400000,
-      "priceold": 800000,
-      "detail": "Áo Polo Nam AM MP078 Chất Liệu Coolmax Thấm Hút Mồ Hôi, Khô Thoáng Tuyệt Đối Cổ 2 Cúc Phối 2 Màu Tương Phản\n🔥 THÔNG TIN SẢN PHẨM:\n- Chất liệu vải: STYLE 5 (PLNV-P78); 95%Polyester 5%Spandex Lascoste Coolmax. Vải coolmax được thiết kế đặc biệt, là sự pha trộn các sợi tổng hợp có tính năng làm mát tối ưu (hơn cả những sợi vải đến từ thiên nhiên), giúp thấm hút & khô thoáng tuyệt đối, tạo cho người mặc cảm thấy thoáng mát, dễ chịu nhất\n- Kiểu dáng: \n+ Cổ và 1/2 cổ tay bo dệt, phối 2 màu tương phản\n+ Decor: Sealon bạc phản quang ở logo trên ngực trái",
-      "image": "https://cf.shopee.vn/file/4aedc1f866ef216acba9acb5f73ea88d",
-      "slug": "ao-polo-nam-am-mp078-chat-lieu-coolmax-tham-hut-mo-hoi-kho-thoang-tuyet-doi-co-2-cuc-phoi-2-mau-tuong-phan",
-      "id": 3
     },
     {
       "name": "Combo 20 Cuốn Tập Học Sinh 4 Ô Ly 96 Trang DL 80 - Mẫu Ngẫu Nhiên",
@@ -97,16 +99,6 @@
       "id": 10
     },
     {
-      "name": "Bộ Quần Áo Nam Thể Thao Viền Tay Cao Cấp thời Trang ZERO",
-      "cate_id": "2",
-      "price": 130000,
-      "priceold": 260000,
-      "detail": "Bộ Quần Áo Nam Thể Thao Viền Tay Cao Cấp thời Trang ZERO\n📣 CHÍNH SÁCH <br>\nLà khách hàng của VICERO, bạn sẽ được: \n👉 FREESHIP cho tất cả các đơn hàng từ 150K \n👉 Cam kết chất lượng và mẫu mã sản phẩm giống với hình ảnh. \n👉 Hoàn tiền nếu sản phẩm không giống với mô tả. \n👉 Cam kết được đổi trả hàng trong vòng 2 ngày. ",
-      "image": "https://cf.shopee.vn/file/1fb01bba24c1bf931ad47b6167ddb18d",
-      "slug": "bo-quan-ao-nam-the-thao-vien-tay-cao-cap-thoi-trang-zero",
-      "id": "02400443041233221421034"
-    },
-    {
       "name": "Bộ Thể Thao Nam 4 Màu Trẻ Trung Nặng Động VICERO",
       "cate_id": "2",
       "price": 120000,
@@ -114,7 +106,17 @@
       "detail": "Bộ nỉ nam thời trang VICERO <br>\n📣  CHÍNH SÁCH<br>\nLà khách hàng của Vatino, bạn sẽ được:<br> \n👉 FREESHIP cho tất cả các đơn hàng từ 150K<br>\n👉 Cam kết chất lượng và mẫu mã sản phẩm giống với hình ảnh.<br>\n👉 Hoàn tiền nếu sản phẩm không giống với mô tả.<br>\n👉 Cam kết được đổi trả hàng trong vòng 2 ngày<br>",
       "image": "https://cf.shopee.vn/file/3922976c75c0a7700a6b63f0b67c4dbf",
       "slug": "bo-the-thao-nam-4-mau-tre-trung-nang-dong-vicero",
-      "id": "43442414443432223404301"
+      "id": "43442"
+    },
+    {
+      "name": "Áo Hoodie Essentials Nỉ Bông Hàng Cao Cấp Ss2021",
+      "cate_id": "2",
+      "price": 30000,
+      "priceold": 40000,
+      "detail": "áo xl",
+      "image": "https://cf.shopee.vn/file/ef7c0fec042ab6ba73c0c77d02a3b04a",
+      "slug": "ao-hoodie-essentials-ni-bong-hang-cao-cap-ss2021",
+      "id": "281051503"
     }
   ],
   "comments": [
@@ -132,6 +134,124 @@
       "email": "trantien120498@gmail.com",
       "password": "$2a$10$ag5k6cm.P53AmrhAkonjru0HmPQ2O7wt6MYULY8CO8YogVkWv7rOe",
       "id": 1
+    },
+    {
+      "email": "tientph12974@fpt.edu.vn",
+      "password": "$2a$10$jgjm7gK1O6kAxloXWoeu8.R91artDov2vv3SnnlILJh8B6MmLa3xG",
+      "id": 2
+    },
+    {
+      "email": "truong@gmail.com",
+      "password": "$2a$10$I6zoRtvw4yWjVDO9/DqziuiCC5DuRiqUwLDliHSmPMb13.rZ20KFG",
+      "id": 3
+    },
+    {
+      "email": "tien@gmail.com",
+      "password": "$2a$10$jRi8metQGsuU.Mm280Eqf.gRj8BJDIZOXKI7P/.jPy5lT1FKsSmIW",
+      "id": 4
+    },
+    {
+      "email": "adminfake@gmail.com",
+      "password": "$2a$10$abgAE9bWKNAx18JVOild6.kzUQsxkoFQSgdTYBxL1WC3g2mGhpLbG",
+      "id": 5
+    }
+  ],
+  "orders": [
+    {
+      "id": "344680572",
+      "tenkh": "truong",
+      "emailkh": "trantien120498@gmail.com",
+      "sdtkh": "1",
+      "diachikh": "hn",
+      "tongtien": 15000000,
+      "sanpham": [
+        {
+          "name": "Điện thoại Xiaomi Redmi Note 10 Pro (8GB/128GB)",
+          "cate_id": "1",
+          "price": 7500000,
+          "priceold": 10000000,
+          "detail": "- Bộ sản phẩm gồm: Hộp, Sách hướng dẫn, Cây lấy sim, Ốp lưng, Cáp Type C, Củ sạc nhanh rời đầu Type A.\n- Vẻ ngoài sang trọng, thời trang. Xiaomi Redmi Note 10 Pro mang vẻ ngoài thời thượng với độ dày chỉ 8.1 mm và nặng 193 g, kết hợp cùng thiết kế bo cong 4 góc mang đến cảm giác cầm nắm thoải mái và dễ chịu.\n- Thiết bị cải tiến với mặt lưng kính cho hiệu ứng bóng bẩy, phản chiếu lại ánh sáng mỗi khi người dùng thay đổi góc nhìn, giúp máy trở nên thu hút và bắt mắt hơn.",
+          "image": "https://cf.shopee.vn/file/d46e9a8d40669476385a23d32739de13",
+          "slug": "dien-thoai-xiaomi-redmi-note-10-pro-8gb128gb",
+          "id": 7,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "036242062",
+      "tenkh": "dinh",
+      "emailkh": "trantien120498@gmail.com",
+      "sdtkh": "1",
+      "diachikh": "hn",
+      "tongtien": 1280000,
+      "sanpham": [
+        {
+          "name": "Áo Polo Nam AM MP078 Chất Liệu Coolmax Thấm Hút Mồ Hôi, Khô Thoáng Tuyệt Đối Cổ 2 Cúc Phối 2 Màu Tương Phản",
+          "cate_id": "2",
+          "price": 400000,
+          "priceold": 800000,
+          "detail": "Áo Polo Nam AM MP078 Chất Liệu Coolmax Thấm Hút Mồ Hôi, Khô Thoáng Tuyệt Đối Cổ 2 Cúc Phối 2 Màu Tương Phản\n🔥 THÔNG TIN SẢN PHẨM:\n- Chất liệu vải: STYLE 5 (PLNV-P78); 95%Polyester 5%Spandex Lascoste Coolmax. Vải coolmax được thiết kế đặc biệt, là sự pha trộn các sợi tổng hợp có tính năng làm mát tối ưu (hơn cả những sợi vải đến từ thiên nhiên), giúp thấm hút & khô thoáng tuyệt đối, tạo cho người mặc cảm thấy thoáng mát, dễ chịu nhất\n- Kiểu dáng: \n+ Cổ và 1/2 cổ tay bo dệt, phối 2 màu tương phản\n+ Decor: Sealon bạc phản quang ở logo trên ngực trái",
+          "image": "https://cf.shopee.vn/file/4aedc1f866ef216acba9acb5f73ea88d",
+          "slug": "ao-polo-nam-am-mp078-chat-lieu-coolmax-tham-hut-mo-hoi-kho-thoang-tuyet-doi-co-2-cuc-phoi-2-mau-tuong-phan",
+          "id": 3,
+          "quantity": 3
+        },
+        {
+          "name": "Combo 20 Cuốn Tập Học Sinh 4 Ô Ly 96 Trang DL 80 - Mẫu Ngẫu Nhiên",
+          "cate_id": "3",
+          "price": 40000,
+          "priceold": 80000,
+          "detail": "Combo 20 Cuốn Tập Học Sinh 4 Ô Ly 96 Trang DL 80 - Mẫu Ngẫu Nhiên",
+          "image": "https://salt.tikicdn.com/cache/400x400/ts/product/f0/25/2b/0d00af5340449d3eabbc0784bfa991c7.jpg",
+          "slug": "combo-20-cuon-tap-hoc-sinh-4-o-ly-96-trang-dl-80---mau-ngau-nhien",
+          "id": 4,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "184673336",
+      "tenkh": "Trần Tiến",
+      "emailkh": "trantien120498@gmail.com",
+      "sdtkh": "0333165255",
+      "diachikh": "Quảng Ninh",
+      "tongtien": 6920000,
+      "sanpham": [
+        {
+          "name": "Tai Nghe Nhét Tai Có Dây Có Mic Jack 3.5mm chuyên gaming oppo, samsung",
+          "cate_id": "1",
+          "price": 400000,
+          "priceold": 500000,
+          "detail": "Tai Nghe Nhét Tai Có Dây Có Mic Jack 3.5mm chuyên gaming oppo, samsung",
+          "image": "https://cf.shopee.vn/file/56e62f214702317b56b5c7ea72b5944f_tn",
+          "slug": "tai-nghe-nhet-tai-co-day-co-mic-jack-35mm-chuyen-gaming-oppo-samsung",
+          "id": 1,
+          "quantity": 2
+        },
+        {
+          "name": "Điện thoại Iphone 13 ProMax 1GB",
+          "cate_id": "1",
+          "price": 2000000,
+          "priceold": 8000000,
+          "detail": "Điện thoại Iphone 13 ProMax 1GB",
+          "image": "https://cf.shopee.vn/file/b107f2e6167adb250100ec4c8d028a57_tn",
+          "slug": "dien-thoai-iphone-13-promax-1gb",
+          "id": 9,
+          "quantity": 3
+        },
+        {
+          "name": "Bộ Thể Thao Nam 4 Màu Trẻ Trung Nặng Động VICERO",
+          "cate_id": "2",
+          "price": 120000,
+          "priceold": 200000,
+          "detail": "Bộ nỉ nam thời trang VICERO <br>\n📣  CHÍNH SÁCH<br>\nLà khách hàng của Vatino, bạn sẽ được:<br> \n👉 FREESHIP cho tất cả các đơn hàng từ 150K<br>\n👉 Cam kết chất lượng và mẫu mã sản phẩm giống với hình ảnh.<br>\n👉 Hoàn tiền nếu sản phẩm không giống với mô tả.<br>\n👉 Cam kết được đổi trả hàng trong vòng 2 ngày<br>",
+          "image": "https://cf.shopee.vn/file/3922976c75c0a7700a6b63f0b67c4dbf",
+          "slug": "bo-the-thao-nam-4-mau-tre-trung-nang-dong-vicero",
+          "id": "43442",
+          "quantity": 1
+        }
+      ]
     }
   ]
 }

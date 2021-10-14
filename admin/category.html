@@ -238,10 +238,7 @@
                                     <thead>
                                       <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">Tên sản phẩm</th>
-                                        <th scope="col">Giá</th>
-                                        <th scope="col">Images</th>
-                                        <th scope="col">Danh mục</th>
+                                        <th scope="col">Tên danh mục</th>
                                         <th scope="col" colspan="2">Chức năng</th>
                                       </tr>
                                     </thead>
@@ -414,6 +411,31 @@
         <script src="assets\js\app.min.js"></script>
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="admin.js"></script>
+        <script>
+            var show = document.querySelector('#show');
+            axios.get('http://localhost:3000/categories')
+            .then(response => show.innerHTML = response.data.map((data, index) =>{
+                return `<tr>
+                    <td>${data.id}</td>
+                    <td>${data.name}</td>
+                    <td><a class="btn btn-primary"href="./edit-category.html?id=${data.id}">Sửa</a></td>
+                    <td><button class="btn btn-danger bnt-confirm-delete" data-target="#deleteProduct" value="${data.id}" data-toggle="modal" href="./index.html?id=${data.id}">Xóa</button></td>
+                </tr>`
+                }).join(''))
+                .then(() => {
+                    var bntDelete = document.querySelectorAll('.bnt-confirm-delete');
+                    bntDelete.forEach(e => {
+                            e.addEventListener('click', function() {
+                            document.querySelector('#delete_ok').value = e.value;
+                        });
+                    });
+                })
+                .then(() => {
+                    var confirmA = document.querySelector('#delete_ok');
+                    confirmA.addEventListener('click', function(e) {
+                        axios.delete('http://localhost:3000/categories/' + this.value)
+                    })
+                })
+        </script>
     </body>
 </html>

@@ -23,6 +23,60 @@ function pageSrc(pageNumber) {
     $q('#next_').href = '?page=' + (parseInt(pageNumber) + 1);
 }
 
+// carosel
+var carouselPro = document.querySelector('.carousel-product');
+sliderX();
+function sliderX(){
+    const render = async () => {
+        const {data} = await axios.get('http://localhost:3000/products/?_sort=id&_order=desc');
+        product = data.map(data => {
+           return `<div class="item">
+                <a href="./product-detail.html?id=${data.id}"><img
+                        src="${data.image}"
+                        alt=""></a>
+                <a href="./product-detail.html?id=${data.id}">
+                    <h6>${data.name}</h6>
+                </a>
+            </div>`
+        }).join('');
+        carouselPro.innerHTML = product;
+        afterRender()
+    }
+    render()
+    
+    const afterRender = () => {
+             $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false,
+                    autoplay: true,
+                    autoplayTimeout: 1800,
+                    autoplayHoverPause: true,
+                },
+                600: {
+                    items: 3,
+                    nav: false,
+                    autoplay: true,
+                    autoplayTimeout: 1800,
+                    autoplayHoverPause: true
+                },
+                1000: {
+                    items: 5,
+                    nav: false,
+                    loop: false,
+                    autoplay: true,
+                    autoplayTimeout: 1800,
+                    autoplayHoverPause: true
+                }
+            }
+        })
+    }
+}
+
 // hien  thi ban dau
 axios.get(urlAPI)
     .then(res =>
@@ -43,6 +97,17 @@ sort_price_all.addEventListener('change', function () {
         )
 })
 
+//category
+var category = document.querySelector('#category');
+    category.addEventListener('change', function () {
+        axios.get(urlAPI + '&cate_id='+category.value)
+            .then(res =>
+                product_all.innerHTML = res.data.map(data =>
+                    showData(data.id, data.image, data.name, data.price, data.priceold, data.slug)
+                ).join('')
+            )
+    })
+
 //show data dung chung
 function showData(id, image, name, price, priceold, slug) {
     return `<div class="box_sp col-md-2">
@@ -59,4 +124,27 @@ function showData(id, image, name, price, priceold, slug) {
             </a>
             <img src="https://cf.shopee.vn/file/b809934fa3b980baaa303cf5c32eae22" alt="" class="giamgia_img">
         </div>`
+}
+
+// gio hang index
+countCart()
+function countCart() {
+    var countCart = document.querySelector('.countCart');
+    if (JSON.parse(localStorage.getItem("cart"))) {
+        countCart.innerHTML = JSON.parse(localStorage.getItem("cart")).length;
+        countCart.classList.add('active')
+    }
+}
+
+//Logout
+function logout() {
+    localStorage.removeItem('user');
+    location.href ="./"
+}
+
+//show user
+if (localStorage.getItem('user')) {
+    document.querySelector('.information_user').style.display = 'flex';
+    document.querySelector('.login').style.display = 'none';
+    document.querySelector('.showuser').innerHTML = JSON.parse(localStorage.getItem('user')).user.email;
 }

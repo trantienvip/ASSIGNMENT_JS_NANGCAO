@@ -11,7 +11,7 @@ var formAdd = document.querySelector('#form-add');
 formAdd.addEventListener('submit', function(e){
     e.preventDefault();
     const post = {
-        id: Math.random().toString(5).substr(2),
+        id: Math.random().toString(9).substr(2, 9),
         name: document.querySelector('#nameProduct').value,
         cate_id: document.querySelector('#categoryProduct').value,
         price: parseInt(document.querySelector('#priceProduct').value),
@@ -23,6 +23,10 @@ formAdd.addEventListener('submit', function(e){
 
     axios.post('http://localhost:3000/products', post)
     .then(() => alert('Thêm thành công'))
-    // .then(response => window.location = './index.html')
-    .catch(() => alert('Thêm thất bại'))
+    // .then(response => location.href = './index.html')
+    .catch(error => alert('Thêm thất bại => '+error.response.data))
 })
+
+var categoryProduct = document.querySelector('#categoryProduct');
+axios.get('http://localhost:3000/categories')
+    .then(response => categoryProduct.innerHTML = response.data.map(data => `<option value='${data.id}'>${data.name}</option>`).join(''))
