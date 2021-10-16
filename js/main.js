@@ -148,3 +148,8 @@ if (localStorage.getItem('user')) {
     document.querySelector('.login').style.display = 'none';
     document.querySelector('.showuser').innerHTML = JSON.parse(localStorage.getItem('user')).user.email;
 }
+
+//show category
+var categoryProduct = document.querySelector('#category');
+axios.get('http://localhost:3000/categories')
+    .then(response => categoryProduct.innerHTML = response.data.map(data => `<option value='${data.id}'>${data.name}</option>`).join(''))

@@ -1,6 +1,6 @@
 // search ajx
 var $q = document.querySelector.bind(document);
-$q('#q').addEventListener('input', function (e) {
+$q('#q').addEventListener('input', _.debounce (function (e) {
     var q = $q('#q').value;
     axios.get('http://localhost:3000/products?q=' + q)
         .then(res => {
@@ -21,4 +21,5 @@ $q('#q').addEventListener('input', function (e) {
                 $q('#hienthi-no').innerHTML = `Có <b>${count}</b> kết quả tìm kiếm cho từ khóa "${q}"`;
             }
         });
-})
+}, 2000)
+)
